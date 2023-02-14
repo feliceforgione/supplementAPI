@@ -20,6 +20,8 @@ services:
       - "27018:27017"
     env_file:
       - ./.env
+    volumes:
+      - ./mongodbData:/data/db
     #environment:
     #  - MONGO_INITDB_ROOT_USERNAME={MONGO_INITDB_ROOT_USERNAME}
     #  - MONGO_INITDB_ROOT_PASSWORD={MONGO_INITDB_ROOT_PASSWORD}

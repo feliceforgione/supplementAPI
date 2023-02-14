@@ -18,11 +18,8 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile.mongo
-
     container_name: mongo
     restart: always
-    volumes:
-      - ./mongodbData:/data/db
 
   redis:
     image: redis
