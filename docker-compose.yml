@@ -13,14 +13,6 @@ services:
     depends_on:
       - mongo
 
-  mongo:
-    image: forgione67/supplement-api-mongo
-    build:
-      context: ./
-      dockerfile: Dockerfile.mongo
-    container_name: mongo
-    restart: always
-
   redis:
     image: redis
     container_name: redis

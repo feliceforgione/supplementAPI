@@ -1,5 +1,5 @@
 FROM mongo:6.0.4
 
-WORKDIR /data/db
+#WORKDIR /data/db
 
-COPY ./mongodbData ./
+#COPY ./mongodbData/* ./

@@ -16,12 +16,18 @@ services:
     command: npm run dev
 
   mongo:
+    image: forgione67/supplement-api-mongo
+    build:
+      context: ./
+      dockerfile: Dockerfile.mongo
     ports:
       - "27018:27017"
     env_file:
       - ./.env
     volumes:
       - ./mongodbData:/data/db
+    container_name: mongo
+    restart: always
     #environment:
     #  - MONGO_INITDB_ROOT_USERNAME={MONGO_INITDB_ROOT_USERNAME}
     #  - MONGO_INITDB_ROOT_PASSWORD={MONGO_INITDB_ROOT_PASSWORD}
