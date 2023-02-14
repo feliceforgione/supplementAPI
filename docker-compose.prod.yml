@@ -12,5 +12,6 @@ services:
     command: npm start
 
   mongo:
+    image: forgione67/supplement-api-mongo
     env_file:
       - ./.env
