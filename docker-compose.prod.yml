@@ -1,8 +1,5 @@
 version: "3"
 services:
-  nginx:
-    ports:
-      - "80:80"
   node-api:
     image: forgione67/supplement-api
     env_file:
@@ -15,3 +12,7 @@ services:
     image: forgione67/supplement-api-mongo
     env_file:
       - ./.env
+
+  nginx:
+    ports:
+      - "80:80"

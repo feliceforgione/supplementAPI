@@ -9,7 +9,6 @@ services:
       - ./.env
     environment:
       - NODE_ENV=development
-      - PORT=3000
     volumes:
       - ./nodeServer/:/usr/src/app:ro
       - /usr/src/app/node_modules
