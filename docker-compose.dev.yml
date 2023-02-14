@@ -1,0 +1,27 @@
+version: "3"
+services:
+  nginx:
+    ports:
+      - "3000:80"
+
+  node-api:
+    env_file:
+      - ./.env
+    environment:
+      - NODE_ENV=development
+      - REDIS_URL=redis
+      - REDIS_PORT=6379
+      - PORT=3000
+    volumes:
+      - ./nodeServer/:/usr/src/app:ro
+      - /usr/src/app/node_modules
+    command: npm run dev
+
+  mongo:
+    ports:
+      - "27018:27017"
+    env_file:
+      - ./.env
+    #environment:
+    #  - MONGO_INITDB_ROOT_USERNAME={MONGO_INITDB_ROOT_USERNAME}
+    #  - MONGO_INITDB_ROOT_PASSWORD={MONGO_INITDB_ROOT_PASSWORD}

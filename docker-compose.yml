@@ -1,0 +1,26 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+
+  node-api:
+    build:
+      context: ./nodeServer
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    volumes:
+      - ./mongodbData:/data/db
+
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"

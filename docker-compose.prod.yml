@@ -1,0 +1,16 @@
+version: "3"
+services:
+  nginx:
+    ports:
+      - "80:80"
+
+  node-api:
+    env_file:
+      - ./.env
+    environment:
+      - NODE_ENV=production
+    command: npm start
+
+  mongo:
+    env_file:
+      - ./.env
