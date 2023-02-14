@@ -3,8 +3,8 @@ services:
   nginx:
     ports:
       - "80:80"
-
   node-api:
+    image: forgione67/supplement-api
     env_file:
       - ./.env
     environment:

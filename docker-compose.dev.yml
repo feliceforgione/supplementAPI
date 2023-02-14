@@ -9,8 +9,6 @@ services:
       - ./.env
     environment:
       - NODE_ENV=development
-      - REDIS_URL=redis
-      - REDIS_PORT=6379
       - PORT=3000
     volumes:
       - ./nodeServer/:/usr/src/app:ro
