@@ -12,6 +12,7 @@ services:
     volumes:
       - ./nodeServer/:/usr/src/app:ro
       - /usr/src/app/node_modules
+      - ./nodeServer/public/:/usr/src/app/public
     command: npm run dev
 
   mongo:

@@ -5,7 +5,7 @@ module.exports = {
     } else {
       req.session.viewCount++;
     }
-    res.send("hello" + req.session.viewCount);
-    //res.render('index.ejs')
+    //res.send("hello" + req.session.viewCount);
+    res.render("index.ejs", { pageViews: req.session.viewCount });
   },
 };

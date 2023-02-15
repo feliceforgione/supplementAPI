@@ -5,12 +5,260 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Supplement API</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
 </head>
 
 <body>
-    <h1>Medication API</h1>
-    <a href="/api/v1/medications"> Medication List</a>
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 pt-20 items-center justify-center flex-col">
+            <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center " alt="hero" src="../logo.svg">
+            <div class="text-center lg:w-2/3 w-full">
+                <p class="leading-relaxed text-3xl -mt-14">API Reference Guide</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container mx-auto flex px-5 pb-5 items-center justify-center flex-col text-xl">
+            <ul class="flex">
+                <li class="mr-6">
+                    <a class="text-blue-500 hover:text-blue-800" href="#authentication">Authentication</a>
+                </li>
+                <li class="mr-6">
+                    <a class="text-blue-500 hover:text-blue-800" href="#medications">Medications</a>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+
+    <section id="authentication" class="text-gray-600 body-font overflow-hidden">
+
+        <div class="container px-5 pb-24 mx-auto">
+            <div class="mb-3 border-b-2">
+                <h1 class="text-3xl">Authentication</h1>
+            </div>
+
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+                <div class="py-8 flex flex-wrap md:flex-nowrap">
+                    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                        <span class="font-semibold title-font text-gray-700">SIGNUP</span>
+                    </div>
+                    <div class="md:flex-grow">
+                        <h2 class="text-xl font-medium text-gray-900 title-font">POST /users/signup </h2>
+                        <p class="leading-relaxed">Create new user login</p>
+                        <h3 class="text-l font-medium text-gray-900 mt-5">Endpoint URL</h3>
+                        <code class="bg-gray-200 text-red-500 px-1">http://HOST/api/v1/users/signup</code>
+                        <h3 class="text-l font-medium text-gray-900 mt-5">Successful Response</h3>
+                        <pre><code class="language-json">{
+    "status": "success",
+    "data": {
+        "user": {
+            "_id": "63ec317d162cc7001eb18fc3",
+            "username": "USERNAME",
+            "password": "$2b$12$jr5qLqVSp.l3GXQGTCCaCueSCOoc6DmCPwfBfRX0hkjLPAKKv0yIa",
+            "__v": 0
+        }
+    }
+}                        </code></pre>
+                    </div>
+                </div>
+
+                <div class="py-8 flex flex-wrap md:flex-nowrap">
+
+                    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                        <span class="font-semibold title-font text-gray-700">LOGIN</span>
+                    </div>
+                    <div class="md:flex-grow">
+                        <h2 class="text-xl font-medium text-gray-900 title-font">POST /users/login </h2>
+                        <p class="leading-relaxed">Login in user to authenticate</p>
+                        <h3 class="text-l font-medium text-gray-900 mt-5">Endpoint URL</h3>
+                        <code class="bg-gray-200 text-red-500 px-1">http://HOST/api/v1/users/login</code>
+                        <h3 class="text-l font-medium text-gray-900 mt-5">Successful Response</h3>
+                        <pre><code class="language-json">{
+    "status": "success"
+}                        </code></pre>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="medications" class="text-gray-600 body-font overflow-hidden">
+
+        <div class="container px-5 pb-24 mx-auto">
+            <div class="mb-3 border-b-2">
+                <h1 class="text-3xl">Medications</h1>
+            </div>
+
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+                <div class="py-8 flex flex-wrap md:flex-nowrap">
+                    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                        <span class="font-semibold title-font text-gray-700">ADD NEW</span>
+                    </div>
+                    <div class="md:flex-grow">
+                        <h2 class="text-xl font-medium text-gray-900 title-font">POST /medications </h2>
+                        <p class="leading-relaxed">Add new supplement</p>
+                        <h3 class="text-l font-medium text-gray-900 mt-5">Endpoint URL</h3>
+                        <code class="bg-gray-200 text-red-500 px-1">http://HOST/api/v1/medications</code>
+                        <h3 class="text-l font-medium text-gray-900 mt-5">Authentication Required!</h3>
+                        <h3 class="text-l font-medium text-gray-900 mt-5">Successful Response</h3>
+                        <pre><code class="language-json">{
+    "status": "success",
+    "data": {
+        "medication": {
+            "_id": "63ec3335162cc7001eb18fc5",
+            "name": "Activated charcoal",
+            "type": "supplement",
+            "description": "Activated charcoal has pores that can trap chemicals. ",
+            "effective": "",
+            "safety": "",
+            "__v": 0
+        }
+    }
+}                        </code></pre>
+                    </div>
+                </div>
+
+                <div class="py-8 flex flex-wrap md:flex-nowrap">
+                    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                        <span class="font-semibold title-font text-gray-700">GET INFO</span>
+                    </div>
+                    <div class="md:flex-grow">
+                        <h2 class="text-xl font-medium text-gray-900 title-font">GET /:id </h2>
+                        <p class="leading-relaxed">Get information for specific supplement</p>
+                        <h3 class="text-l font-medium text-gray-900 mt-5">Endpoint URL</h3>
+                        <code class="bg-gray-200 text-red-500 px-1">http://HOST/api/v1/medications:id</code>
+                        <h3 class="text-l font-medium text-gray-900 mt-5">Path parameters</h3>
+                        <table class="table-fixed">
+                            <thead>
+                                <tr>
+                                    <th class="w-1/4 py-1 text-left bg-gray-200">Name</th>
+                                    <th class="w-1/4 text-left bg-gray-200 py-1">Type</th>
+                                    <th class="w-1/2 text-left bg-gray-200 py-1">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>id</code><br><small class="required">&nbsp;Required&nbsp;</small>
+                                    </td>
+                                    <td>string</td>
+                                    <td>The ID of the supplement you want information about</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <div class="py-8 flex flex-wrap md:flex-nowrap">
+                    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                        <span class="font-semibold title-font text-gray-700">UPDATE INFO</span>
+                    </div>
+                    <div class="md:flex-grow">
+                        <h2 class="text-xl font-medium text-gray-900 title-font">PATCH /:id </h2>
+                        <p class="leading-relaxed">Update specific supplement</p>
+                        <h3 class="text-l font-medium text-gray-900 mt-5">Endpoint URL</h3>
+                        <code class="bg-gray-200 text-red-500 px-1">http://HOST/api/v1/medications:id</code>
+                        <h3 class="text-l font-medium text-gray-900 mt-5">Authentication Required!</h3>
+                        <h3 class="text-l font-medium text-gray-900 mt-5">Path parameters</h3>
+                        <table class="table-fixed">
+                            <thead>
+                                <tr>
+                                    <th class="w-1/4 py-1 text-left bg-gray-200">Name</th>
+                                    <th class="w-1/4 text-left bg-gray-200 py-1">Type</th>
+                                    <th class="w-1/2 text-left bg-gray-200 py-1">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>id</code><br><small class="required">&nbsp;Required&nbsp;</small>
+                                    </td>
+                                    <td>string</td>
+                                    <td>The ID of the supplement you want to update</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="py-8 flex flex-wrap md:flex-nowrap">
+                    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                        <span class="font-semibold title-font text-gray-700">DELETE</span>
+                    </div>
+                    <div class="md:flex-grow">
+                        <h2 class="text-xl font-medium text-gray-900 title-font">DELETE /:id </h2>
+                        <p class="leading-relaxed">Delete a specific supplement</p>
+                        <h3 class="text-l font-medium text-gray-900 mt-5">Endpoint URL</h3>
+                        <code class="bg-gray-200 text-red-500 px-1">http://HOST/api/v1/medications:id</code>
+                        <h3 class="text-l font-medium text-gray-900 mt-5">Authentication Required!</h3>
+                        <h3 class="text-l font-medium text-gray-900 mt-5">Path parameters</h3>
+                        <table class="table-fixed">
+                            <thead>
+                                <tr>
+                                    <th class="w-1/4 py-1 text-left bg-gray-200">Name</th>
+                                    <th class="w-1/4 text-left bg-gray-200 py-1">Type</th>
+                                    <th class="w-1/2 text-left bg-gray-200 py-1">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>id</code><br><small class="required">&nbsp;Required&nbsp;</small>
+                                    </td>
+                                    <td>string</td>
+                                    <td>The ID of the supplement you want to delete</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-gray-600 body-font">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                <span class="ml-3 text-xl">Supplement API</span>
+            </a>
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">©
+                2023 Supplement API —
+                <a href="https://twitter.com/forgione67" class="text-gray-600 ml-1" rel="noopener noreferrer"
+                    target="_blank">@forgione67</a>
+            </p>
+            <span class="inline-flex ml-5 justify-center sm:justify-start">Views: <%= pageViews  %> </span>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+
+                <a class="ml-3 text-gray-500" href="https://twitter.com/forgione67">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="w-5 h-5" viewBox="0 0 24 24">
+                        <path
+                            d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                        </path>
+                    </svg>
+                </a>
+
+                <a class="ml-3 text-gray-500" href="https://www.linkedin.com/in/feliceforgione/">
+                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path stroke="none"
+                            d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                        </path>
+                        <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                    </svg>
+                </a>
+            </span>
+        </div>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </body>
 
 </html>
