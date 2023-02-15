@@ -23,18 +23,21 @@ API to provide information about supplements and herbs.
 
 ### Built With
 
-- [Node.js](https://nodejs.org/en/)
-- [Express.js](https://expressjs.com/)
-- [MongoDB](https://www.mongodb.com/)
-- [Redis](https://redis.io/)
-- [NGINX](https://www.nginx.com/)
-- [Docker](https://www.docker.com/)
+|                                         |                                      |
+| --------------------------------------- | ------------------------------------ |
+| [Node.js](https://nodejs.org/en/)       | [Express.js](https://expressjs.com/) |
+| [MongoDB](https://www.mongodb.com/)     | [Redis](https://redis.io/)           |
+| [NGINX](https://www.nginx.com/)         | [Docker](https://www.docker.com/)    |
+| [Tailwindcss](https://tailwindcss.com/) |                                      |
 
 <br>
 
 <!-- ROADMAP -->
 
 ## Roadmap
+
+- [ ] Add React Frontend
+- [ ] Add more supplement entries into database
 
 <br>
 
