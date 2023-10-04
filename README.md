@@ -32,6 +32,20 @@ API to provide information about supplements and herbs.
 
 <br>
 
+<!-- Setup -->
+
+## Setup
+
+- Setup `.env` file based off `.env=sample`
+- Start docker container `docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build`
+  - Node server is contained and started within docker container. No need to start nodeserver manually.
+
+<!-- Usage -->
+
+## Usage
+
+Server can be accessed at: `http://localhost:3000/`
+
 <!-- ROADMAP -->
 
 ## Roadmap

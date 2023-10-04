@@ -1,8 +1,8 @@
 {
-  "name": "todolist-review-app",
+  "name": "medication-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
     "dev": "nodemon -L server.js",

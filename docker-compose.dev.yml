@@ -39,3 +39,4 @@ services:
       - "50000:50000"
     volumes:
       - ./jenkins:/var/jenkins_home
+    restart: on-failure
