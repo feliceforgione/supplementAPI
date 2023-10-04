@@ -17,6 +17,11 @@
 
 ## About The Project
 
+|                                                                          |                                                                                   |
+| ------------------------------------------------------------------------ | --------------------------------------------------------------------------------- |
+| <img src="./nodeServer/public/medicationApiScreenshot1.png" alt="Home" > | <img src="./nodeServer/public/medicationApiScreenshot2.png" alt="Documentation" > |
+|                                                                          |                                                                                   |
+
 API to provide information about supplements and herbs.
 
 <br>
